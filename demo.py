@@ -18,7 +18,7 @@ with tf.Session() as sess:
     drop_PH = graph.get_tensor_by_name("drop_PH:0")
     output = graph.get_tensor_by_name("deconv_83/output:0")
 
-    srcIMG = cv2.imread("E:/BK/Program/TensorFlow/samples/testdata/stick/t (1).jpg")
+    srcIMG = cv2.imread("./testimg/t (5).jpg")
     rgbIMG = cv2.cvtColor(srcIMG, cv2.COLOR_BGR2RGB)
     smallIMG = cv2.resize(rgbIMG, (cfg.IMG_W,cfg.IMG_H))
     image_4 = smallIMG[np.newaxis,:,:]
