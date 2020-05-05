@@ -20,7 +20,7 @@ with tf.Session() as sess:
     img_PH = graph.get_tensor_by_name("img_PH:0")
     batch_PH = graph.get_tensor_by_name("batch_PH:0")
     drop_PH = graph.get_tensor_by_name("drop_PH:0")
-    output = graph.get_tensor_by_name("deconv_83/output:0")
+    output = graph.get_tensor_by_name("output:0")
 
     """识别和定位"""
     while(1):

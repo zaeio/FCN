@@ -14,7 +14,7 @@ with tf.Session() as sess:
     img_PH = graph.get_tensor_by_name("img_PH:0")
     batch_PH = graph.get_tensor_by_name("batch_PH:0")
     drop_PH = graph.get_tensor_by_name("drop_PH:0")
-    output = graph.get_tensor_by_name("deconv_83/output:0")
+    output = graph.get_tensor_by_name("output:0")
 
     srcIMG = cv2.imread("./testimg/test (1).jpg")
     rgbIMG = cv2.cvtColor(srcIMG, cv2.COLOR_BGR2RGB)
