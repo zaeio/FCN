@@ -18,9 +18,9 @@ with tf.Session() as sess:
 
     srcIMG = cv2.imread("./testimg/test (1).jpg")
     rgbIMG = cv2.cvtColor(srcIMG, cv2.COLOR_BGR2RGB)
-    smallIMG = cv2.resize(rgbIMG, (cfg.IMG_W,cfg.IMG_H))
-    image_4 = smallIMG[np.newaxis,:,:]
-    image_n = imgLib.image_normalize(image_4)
+    smallIMG = cv2.resize(rgbIMG, (cfg.IMG_W,cfg.IMG_H)) # 网络输入图像大小224*160
+    image_4 = smallIMG[np.newaxis,:,:] # 扩展维度
+    image_n = imgLib.image_normalize(image_4) # 标准化
     
     prediction = sess.run(output, feed_dict={img_PH:image_n, batch_PH:1, drop_PH:1})
     labelMAP4 = np.argmax(prediction, axis=3).astype(np.uint8)
